@@ -118,9 +118,6 @@ def comb_select(img, s_thresh=(128, 255), l_thresh=(64, 255), g_thresh=(30, 255)
 
 Note that I also used used a masking technique to keep binary pixels of only the lane line region.
 
-#### Example result
-![masking](output_images/masking.png)
-
 # Determine lane lines
 To determine lane lines, I used the sliding windows method mentioned in class. First, a histogram of lower-half image along the column direction is calculated. The two peaks will naturally correspond to left and right lane lines. Second, a series of fixed-size windows are stacked along the column direction and centered at the center of non-zero pixel clusters. The trace of the windows naturally define a lane line. Finally, a second-order polynomial line is fitted to represent a lane line.
 
